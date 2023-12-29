@@ -8,7 +8,7 @@ export const Home = () => {
     <div className="light:bg-light-primary dark:bg-dark-primary min-h-screen w-full flex flex-col items-center ">
         <div className="w-full  flex justify-center items-center  text-3xl font-bold ">Welcome @ <span className="text-xl "> {username} </span></div>
         <div className=" w-full  flex justify-center items-center text-2xl font-bold">
-         this website is coming Soon
+         this website is Coming Soon
         </div>
     </div>
   );
