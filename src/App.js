@@ -1,25 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter  , Routes , Route } from 'react-router-dom'
+import { Home } from './screens/Home';
+import {Main} from './screens/dashboard/Main'
+import { useState } from 'react';
+import { Login } from './screens/login/Login';
+import { Register } from './screens/register/Register';
+
+const USER_TYPES = {
+  PUBLIC : "public" ,
+  USER  : "normal" ,
+  ADMIN : "admin"
+}
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BrowserRouter>
+      
+          <Routes>
+            <Route path="/"  element={ <Home /> }/>
+            <Route path='/login' element={<Login />}/>
+            <Route path='/register' element={<Register />}/>
+          </Routes>
+           
+      </BrowserRouter>
     </div>
   );
 }
 
+
+// function User () {
+//   return <div>
+//     user pages 
+//   </div>
+// }
+
+// function PublicUser ({children}) {
+//   return <>
+//   {children}
+//   </>
+// }
+
+// function AdminUser ({children}) {
+//    if(Athu === USER_TYPES.ADMIN){
+//     return <>
+//     {children}
+//     </>
+//    } else {
+//     return <div> you do not have access this page !! </div>
+//    }
+// }
 export default App;
