@@ -4,10 +4,11 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import {RegisterAction} from '../../store/Actions/AuthActions'
 import axios from "axios";
+import { SelectCountry } from "../../shared/SelectCountry";
 export const Register = () => {
 
   const [countries , set_contries] = useState([])
-  const [country,set_country] = useState(0)
+  const [country,set_country] = useState({})
   const [formData, setFormData] = useState({
     username: "",
     first_name: "",
@@ -380,7 +381,7 @@ export const Register = () => {
                 </p>}
             </div>
 
-            <div className="w-full">
+            {/* <div className="w-full">
               <label htmlFor="country">Country</label>
               <select
                 id="country"
@@ -392,16 +393,21 @@ export const Register = () => {
                   : "border-gray-300"} w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring focus:border-blue-500`}
               >
                 <option value="">Select country </option>
-               {countries?.length > 0 && countries?.map((country) => {
-                  return <option value={`${country?.name}`} onClick={() => set_country(country?.id)}>{country?.name}</option>
+               {countries?.length > 0 && countries?.map((item) => {
+                  return <option  className="w-full h-10 hover:bg-gray-400" onClick={() => {
+                    set_country(item)
+                  }}>{item?.name}</option>
                }) }
               </select>
               {errors.country &&
                 <p className="text-red-500">
                   {errors.country}
                 </p>}
+            </div> */}
+            <div className="w-full ">
+            <label htmlFor="marital_status">Country</label>
+             <SelectCountry items={countries} set_country={set_country}/>
             </div>
-
             <div className="w-full">
               <label htmlFor="marital_status">marital_status</label>
               <select
