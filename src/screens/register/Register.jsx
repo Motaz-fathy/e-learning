@@ -25,8 +25,7 @@ export const Register = () => {
     phone_number: "",
     password : "",
     confirm_password : "" ,
-    confirm_password : "" ,
-    birth_date : "" ,
+    birth_date : new Date() ,
     gender: "",
     role: "",
     country: "",
@@ -152,19 +151,20 @@ export const Register = () => {
   };
  const handelSubmit = (e) => {
   e.preventDefault()
+  const {username , first_name , last_name , email , password , confirm_password , phone_number  , birth_date , role , gender , marital_status } = formData
   dispatch(RegisterAction(
-    formData?.username ,
-    formData?.first_name ,
-    formData?.last_name ,
-    formData?.email , 
-    formData?.password ,
-    formData?.confirm_password ,
-    formData?.phone_number,
-    formData?.birth_date,
-    country?.id ,
-    formData?.role,
-    formData?.gender,
-    formData?.marital_status   
+    username ,
+       first_name ,
+       last_name ,
+       email , 
+       password , 
+       confirm_password , 
+       phone_number  , 
+       birth_date , 
+       role , 
+       gender , 
+       marital_status ,
+       country?.id ,
        ))
  }
   return (

@@ -65,10 +65,10 @@ export const RegisterAction = (
     confirm_password,
     phone_number,
     birth_date,
-    country,
     role,
     gender,
-    marital_status
+    marital_status,
+    country
   );
   try {
     dispatch({ type: USER_REGISTER_REQUEST });
@@ -77,35 +77,34 @@ export const RegisterAction = (
         "Content-Type": "application/json"
       }
     };
-    const  {data , success}  = await axios.post(
+    const { data, success } = await axios.post(
       `${url}users/register/`,
       {
-        username: username,
-        first_name: first_name,
-        last_name: last_name,
-        email: email,
-        password: password,
-        confirm_password: confirm_password,
-        phone_number: phone_number,
-        dob: 0,
-        country: country,
-        role: role,
-        gender: gender,
-        marital_status: marital_status
+        "username" : username,
+        "first_name" : first_name,
+        "last_name" : last_name,
+        "email" : email,
+        "password" : password,
+        "confirm_password" : confirm_password,
+        "phone_number" : phone_number,
+        "dob" : birth_date,
+        "role" : role,
+        "gender" : gender,
+        "marital_status" : marital_status,
+        "country" : country
       },
       config
     );
-    if(success === true){
-        dispatch({ type: USER_REGISTER_SUCCESS, payload: data });
-        console.log("register action data ",data)
-
+    if (success === true) {
+      dispatch({ type: USER_REGISTER_SUCCESS, payload: data });
+      console.log("register action data ", data);
     } else {
-        dispatch({
-            type: USER_REGISTER_FAIL,
-            payload: data });
-            console.log("register action error ",data)
+      dispatch({
+        type: USER_REGISTER_FAIL,
+        payload: data
+      });
+      console.log("register action error ", data);
     }
-    
   } catch (error) {
     dispatch({
       type: USER_REGISTER_FAIL,
