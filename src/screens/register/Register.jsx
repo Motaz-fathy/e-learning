@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import {RegisterAction} from '../../store/Actions/AuthActions'
 import axios from "axios";
 import { SelectCountry } from "../../shared/SelectCountry";
+import { formatDate } from "../../shared/Functions";
 export const Register = () => {
 
   const [countries , set_contries] = useState([])
@@ -152,7 +153,7 @@ export const Register = () => {
     formData?.password ,
     formData?.confirm_password ,
     formData?.phone_number,
-    formData?.birth_date,
+    formatDate(formData?.birth_date),
     country?.id ,
     formData?.role,
     formData?.gender,
