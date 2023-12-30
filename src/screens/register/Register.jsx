@@ -144,6 +144,7 @@ export const Register = () => {
   };
  const handelSubmit = (e) => {
   e.preventDefault()
+  console.log("birthDate in reg page " , formData?.birth_date)
   dispatch(RegisterAction(
     formData?.username ,
     formData?.first_name ,
