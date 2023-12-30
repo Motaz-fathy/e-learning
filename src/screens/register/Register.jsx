@@ -5,14 +5,6 @@ import { useDispatch } from "react-redux";
 import {RegisterAction} from '../../store/Actions/AuthActions'
 import axios from "axios";
 import { SelectCountry } from "../../shared/SelectCountry";
-
-function formatDate_field(date) {
-  const year = date?.getFullYear();
-  const month = String(date?.getMonth() + 1).padStart(2, '0');
-  const day = String(date.getDate()).padStart(2, '0');
-  return `${year}-${month}-${day}`;
-}
-
 export const Register = () => {
 
   const [countries , set_contries] = useState([])
@@ -25,7 +17,8 @@ export const Register = () => {
     phone_number: "",
     password : "",
     confirm_password : "" ,
-    birth_date : new Date() ,
+    confirm_password : "" ,
+    birth_date : "" ,
     gender: "",
     role: "",
     country: "",
@@ -151,20 +144,19 @@ export const Register = () => {
   };
  const handelSubmit = (e) => {
   e.preventDefault()
-  const {username , first_name , last_name , email , password , confirm_password , phone_number  , birth_date , role , gender , marital_status } = formData
   dispatch(RegisterAction(
-    username ,
-       first_name ,
-       last_name ,
-       email , 
-       password , 
-       confirm_password , 
-       phone_number  , 
-       birth_date , 
-       role , 
-       gender , 
-       marital_status ,
-       country?.id ,
+    formData?.username ,
+    formData?.first_name ,
+    formData?.last_name ,
+    formData?.email , 
+    formData?.password ,
+    formData?.confirm_password ,
+    formData?.phone_number,
+    formData?.birth_date,
+    country?.id ,
+    formData?.role,
+    formData?.gender,
+    formData?.marital_status   
        ))
  }
   return (
