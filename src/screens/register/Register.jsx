@@ -5,7 +5,14 @@ import { useDispatch } from "react-redux";
 import {RegisterAction} from '../../store/Actions/AuthActions'
 import axios from "axios";
 import { SelectCountry } from "../../shared/SelectCountry";
-import { formatDate } from "../../shared/Functions";
+
+function formatDate_field(date) {
+  const year = date?.getFullYear();
+  const month = String(date?.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
 export const Register = () => {
 
   const [countries , set_contries] = useState([])
@@ -153,7 +160,7 @@ export const Register = () => {
     formData?.password ,
     formData?.confirm_password ,
     formData?.phone_number,
-    formatDate(formData?.birth_date),
+    formData?.birth_date,
     country?.id ,
     formData?.role,
     formData?.gender,
