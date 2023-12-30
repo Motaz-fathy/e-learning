@@ -1,21 +1,30 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { SvgSection } from "./SvgSection";
 import { Link } from "react-router-dom";
-
+import { useDispatch } from "react-redux";
+import {RegisterAction} from '../../store/Actions/AuthActions'
+import axios from "axios";
 export const Register = () => {
+
+  const [countries , set_contries] = useState([])
+  const [country,set_country] = useState(0)
   const [formData, setFormData] = useState({
+    username: "",
     first_name: "",
     last_name: "",
     email: "",
     phone_number: "",
     password : "",
     confirm_password : "" ,
+    confirm_password : "" ,
+    birth_date : "" ,
     gender: "",
     role: "",
     country: "",
     marital_status: ""
   });
-
+  console.log("country" , country)
+  const dispatch = useDispatch()
   const [errors, setErrors] = useState({});
   const [currentStep, setCurrentStep] = useState(1);
 
@@ -24,10 +33,31 @@ export const Register = () => {
     setFormData({ ...formData, [name]: value });
     setErrors({ ...errors, [name]: "" }); // Clear the error for the current field
   };
-
+  useEffect(() => {
+    get_countries()
+  } , [])
+  const get_countries = async () => {
+   try {
+    const config = {
+      headers: {
+        "Content-Type": "application/json"
+      }
+    };
+    const {data} = await axios.get('https://hamdyadam.pythonanywhere.com/users/countries/list-create/' , config)
+    set_contries(data?.data?.results)
+    console.log(data?.data?.results)
+   } catch (error) {
+    console.log(error)
+   }
+  }
   const validateStep1 = () => {
     let isValid = true;
     const newErrors = {};
+
+    if (formData.username.trim() === "") {
+      newErrors.username = "user name is required";
+      isValid = false;
+    }
 
     if (formData.first_name.trim() === "") {
       newErrors.first_name = "First name is required";
@@ -70,6 +100,11 @@ export const Register = () => {
     let isValid = true;
     const newErrors = {};
 
+    if (formData.birth_date.trim() === "") {
+      newErrors.birth_date = "birth date is required";
+      isValid = false;
+    }
+
     if (formData.gender.trim() === "") {
       newErrors.gender = "Gender is required";
       isValid = false;
@@ -106,7 +141,23 @@ export const Register = () => {
   const handlePrev = () => {
     setCurrentStep(currentStep - 1);
   };
-
+ const handelSubmit = (e) => {
+  e.preventDefault()
+  dispatch(RegisterAction(
+    formData?.username ,
+    formData?.first_name ,
+    formData?.last_name ,
+    formData?.email , 
+    formData?.password ,
+    formData?.confirm_password ,
+    formData?.phone_number,
+    formData?.birth_date,
+    country?.id ,
+    formData?.role,
+    formData?.gender,
+    formData?.marital_status   
+       ))
+ }
   return (
     <div className="w-full  flex items-center justify-between min-h-screen bg-gray-100 gap-5">
       <div className="w-1/2 max-sm:hidden">
@@ -116,6 +167,24 @@ export const Register = () => {
         {currentStep === 1 &&
           <div className="w-full max-w-md bg-white p-8 shadow max-sm:w-full flex flex-col items-center ">
             <h2 className="w-full flex justify-center items-center">Signup</h2>
+
+            <div className="w-full">
+              <label htmlFor="username">User name </label>
+              <input
+                type="text"
+                id="username"
+                name="username"
+                value={formData.username}
+                onChange={handleChange}
+                className={`${errors.username
+                  ? "border-red-500"
+                  : "border-gray-300"} w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring focus:border-blue-500`}
+              />
+              {errors.username &&
+                <p className="text-red-500">
+                  {errors.username}
+                </p>}
+            </div>
 
             <div className="w-full">
               <label htmlFor="first_name">First Name</label>
@@ -250,6 +319,24 @@ export const Register = () => {
             <h2> Personal Info</h2>
 
             <div className="w-full">
+              <label htmlFor="birth_date">birth date </label>
+              <input
+                type="date"
+                id="birth_date"
+                name="birth_date"
+                value={formData.birth_date}
+                onChange={handleChange}
+                className={`${errors.birth_date
+                  ? "border-red-500"
+                  : "border-gray-300"} w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring focus:border-blue-500`}
+              />
+              {errors.birth_date &&
+                <p className="text-red-500">
+                  {errors.birth_date}
+                </p>}
+            </div>
+
+            <div className="w-full">
               <label htmlFor="gender">Gender</label>
               <select
                 id="gender"
@@ -304,10 +391,10 @@ export const Register = () => {
                   ? "border-red-500"
                   : "border-gray-300"} w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring focus:border-blue-500`}
               >
-                <option value="">Select Country</option>
-                <option value="egypt">Egypt</option>
-                <option value="brazil">Brazil</option>
-                <option value="usa">USA</option>
+                <option value="">Select country </option>
+               {countries?.length > 0 && countries?.map((country) => {
+                  return <option value={`${country?.name}`} onClick={() => set_country(country?.id)}>{country?.name}</option>
+               }) }
               </select>
               {errors.country &&
                 <p className="text-red-500">
@@ -351,7 +438,7 @@ export const Register = () => {
                 className=" h-10 hover:bg-sky-700 text-white font-bold  rounded 
         w-full flex justify-center items-center bg-sky-300 my-3
         focus:outline-none focus:ring focus:border-blue-500"
-                onClick={handleNext}
+                onClick={handelSubmit}
               >
                 Register
               </button>
