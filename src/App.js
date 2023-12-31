@@ -4,24 +4,33 @@ import {Main} from './screens/dashboard/Main'
 import { useState } from 'react';
 import { Login } from './screens/login/Login';
 import { Register } from './screens/register/Register';
+import { useSelector } from 'react-redux';
 
 const USER_TYPES = {
-  PUBLIC : "public" ,
-  USER  : "normal" ,
-  ADMIN : "admin"
+  PUBLIC : true ,
+  PROTECT  : false ,
+  ADMIN : false
 }
 
 function App() {
-
+ const {data} = useSelector(state => state.LoginReducer) || undefined
+ const success = data?.success
+ console.log("roles of routes " , success)
   return (
     <div>
       <BrowserRouter>
-      
+
+
+    
+
           <Routes>
-            <Route path="/"  element={ <Home /> }/>
-            <Route path='/login' element={<Login />}/>
-            <Route path='/register' element={<Register />}/>
+          <Route path='/login' element={<Login />}/>
+          <Route path='/register' element={<Register />}/>  
+          <Route path="/"  element={ <Home /> }/>
+          <Route path="*"  element={ <Home /> }/>
           </Routes>
+
+
            
       </BrowserRouter>
     </div>
@@ -29,10 +38,11 @@ function App() {
 }
 
 
-// function User () {
-//   return <div>
-//     user pages 
-//   </div>
+// function Protect ({children}) {
+  
+//   return <>
+//     {children}
+//   </>
 // }
 
 // function PublicUser ({children}) {
@@ -42,12 +52,8 @@ function App() {
 // }
 
 // function AdminUser ({children}) {
-//    if(Athu === USER_TYPES.ADMIN){
-//     return <>
-//     {children}
-//     </>
-//    } else {
-//     return <div> you do not have access this page !! </div>
-//    }
-// }
+//   return <>
+//   {children}
+//   </>
+//}
 export default App;

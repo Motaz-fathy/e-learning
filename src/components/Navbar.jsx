@@ -119,6 +119,9 @@ export const Navbar = () => {
 
                 </div>
                 <Toggle />
+                <Link to={'/login'} className="text-gray-900 dark:text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                {t("Log Out")}
+              </Link>
               </div>  : <>
                 <Link to={'/login'} className="text-gray-900 dark:text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                 {t("Login")}
@@ -158,6 +161,7 @@ export const Navbar = () => {
 
                 </div>
               <Toggle />
+
               </> } 
             </div>
           </div>
