@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { Link,useNavigate } from "react-router-dom";
@@ -7,6 +7,9 @@ import { useDispatch, useSelector } from "react-redux";
 export const LoginForm = () => {
   const dispatch = useDispatch() 
   const {data , error } = useSelector(state => state.LoginReducer)
+
+  const success = data?.success
+
   const navigate = useNavigate()
   const initialValues = {
     email: "",
@@ -22,14 +25,15 @@ export const LoginForm = () => {
       .min(8, "must be at least 8 characters long")
   });
 
-  const handleSubmit = values => {
-    dispatch(LoginAction(values?.email , values?.password))
+  const handleSubmit = async (values) => {
+    await dispatch(LoginAction(values?.email , values?.password))
 
-    if(!!data) {
-        navigate("/")
+    if(data !== undefined && success === true) {
+      navigate("/")
     }
+
   };
-  
+
   return (
     <div className="w-1/2 max-w-md bg-white p-8 shadow max-sm:w-full flex flex-col items-center ">
       <span className=" text-2xl font-bold mb-4 ">Login</span>
@@ -85,6 +89,7 @@ export const LoginForm = () => {
           </div>
 
           <button
+          onClick={handleSubmit}
             type="submit"
             className=" h-10 hover:bg-sky-700 text-white font-bold  rounded 
           w-full flex justify-center items-center bg-sky-300 my-3
