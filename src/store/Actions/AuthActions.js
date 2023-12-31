@@ -43,19 +43,13 @@ export const LoginAction = (email, password) => async dispatch => {
 
 export const RegisterAction = (
   username,
-  first_name,
-  last_name,
   email,
   password,
   confirm_password,
   phone_number,
-  birth_date,
-  country,
   role,
-  gender,
-  marital_status
+
 ) => async dispatch => {
-  console.log(birth_date)
   try {
     dispatch({ type: USER_REGISTER_REQUEST });
     const config = {
@@ -67,17 +61,11 @@ export const RegisterAction = (
       `${url}users/register/`,
       {
         "username": username,
-        "first_name": first_name,
-        "last_name": last_name,
         "email": email,
         "password": password,
         "confirm_password": confirm_password,
         "phone_number": phone_number,
-        "dob": birth_date,
-        "country": country,
         "role": role,
-        "gender": gender,
-        "marital_status": marital_status
       },
       config
     );
