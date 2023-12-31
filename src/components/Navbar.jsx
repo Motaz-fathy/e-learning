@@ -86,7 +86,7 @@ export const Navbar = () => {
           <div className="hidden md:block">
             <div className="ml-4 flex items-center md:ml-6 gap-2">
               {!!data ? <div className='flex justify-center items-center  gap-2 '>
-                <span className='text-sm font-bold dark:text-white'>{data?.data?.name || "Motaz fathy "}</span>
+                <span className='text-sm font-bold dark:text-white'>{data?.data?.username}</span>
                 <div className="relative group">
                   <div  onClick={() => set_profile(!profile)}
                   className="w-8 h-8 rounded-[100%] bg-gray-200 cursor-pointer flex justify-center items-center">   

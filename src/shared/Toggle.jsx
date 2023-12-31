@@ -18,9 +18,9 @@ const Toggle = () => {
   return (
     <div>
       <button onClick={toggleTheme} className=" ">
-        <span className="dark:text-white hover:text-gray-300 ">
+        <span className=" hover:text-gray-300 ">
           {isDarkMode
-            ? <div className="w-8 h-8 rounded-[100%] bg-gray-800 flex justify-center items-center ">
+            ? <div className="w-8 h-8 rounded-[100%] bg-gray-200 flex justify-center items-center ">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
