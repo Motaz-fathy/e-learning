@@ -144,9 +144,9 @@ export const Register = () => {
   // const handlePrev = () => {
   //   setCurrentStep(currentStep - 1);
   // };
- const handelSubmit =async (e) => {
+ const handelSubmit = (e) => {
   e.preventDefault()
- await dispatch(RegisterAction(
+  dispatch(RegisterAction(
     formData?.username ,
     formData?.email , 
     formData?.password ,
@@ -154,10 +154,14 @@ export const Register = () => {
     formData?.phone_number,
     formData?.role,
     ))
- if(!!sign_up && sign_up === true) {
-  navigate('/login')
-  }
+
  }
+ useEffect(() => {
+  if(user !== undefined && sign_up === true) {
+    navigate('/login')
+    }
+ } , [user , sign_up])
+ 
   return (
     <div className="w-full  flex items-center justify-between min-h-screen bg-gray-100 gap-5">
       <div className="w-1/2 max-sm:hidden">
