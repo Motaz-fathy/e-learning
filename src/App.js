@@ -28,6 +28,7 @@ function App() {
           <Route path='/register' element={<Register />}/>  
           <Route path="/"  element={ <Home /> }/>
           <Route path="*"  element={ <Home /> }/>
+          <Route path='/dashboard' element={<Main />}/>
           </Routes>
 
 
