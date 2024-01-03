@@ -129,7 +129,7 @@ export const Navbar = () => {
               <Link to={'/register'} className="ml-4 text-gray-900 dark:text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                 {t("Sign Up")}
               </Link>
-              <div className="relative group">
+                <div className="relative group">
                   <div  onClick={() => set_profile(!profile)}
                   className="w-8 h-8 rounded-[100%] bg-gray-200 cursor-pointer flex justify-center items-center hover:text-gray-400">  
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
