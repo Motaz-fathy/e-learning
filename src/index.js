@@ -6,6 +6,12 @@ import { Provider } from 'react-redux';
 import store ,{persistStor} from './store/Store'
 import {PersistGate} from 'redux-persist/integration/react'
 import './Il8n';
+import setupLocatorUI from "@locator/runtime";
+
+if (process.env.NODE_ENV === "development") {
+  setupLocatorUI();
+}
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

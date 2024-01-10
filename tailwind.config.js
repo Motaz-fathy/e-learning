@@ -6,7 +6,11 @@ module.exports = {
   ],
   darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+      backdropFilter: {
+        'none': 'none',
+      },
+    },
   },
   plugins: [
     require("tailwindcss-rtl")

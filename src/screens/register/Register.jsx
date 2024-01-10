@@ -24,7 +24,6 @@ export const Register = () => {
     country: "",
     marital_status: ""
   });
-  console.log("country" , country)
   const dispatch = useDispatch()
   const [errors, setErrors] = useState({});
   const [currentStep, setCurrentStep] = useState(1);
@@ -158,7 +157,7 @@ export const Register = () => {
  }
  useEffect(() => {
   if(user !== undefined && sign_up === true) {
-    navigate('/login')
+    // navigate('/login')
     }
  } , [user , sign_up])
  
