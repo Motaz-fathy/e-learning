@@ -90,9 +90,8 @@ export const ExpenseRatioChart = () => {
   };
 
   return (
-    <div className="w-1/2 h-auto max-sm:w-full bg-opacity-20 shadow-lg  flex justify-center  z-0 ">
-      
-      <Chart options={options} series={options.series} type="donut" height={300} />
+    <div className="w-1/2 h-[100%] max-sm:w-full bg-opacity-20 border-[1px] border-sky-400 rounded-lg  z-0">
+      <Chart options={options} series={options.series} type="donut" height={300} className="--tw-backdrop-sepia"/>
     </div>
   );
 };
@@ -198,9 +197,9 @@ export const LineChart = () => {
     ];
   
     return (
-      <div className='w-1/2 max-sm:w-full bg-opacity-20 shadow-lg rounded-lg  z-0' >
+      <div className='w-1/2 h-[100%] max-sm:w-full bg-opacity-20 border-[1px] border-sky-400 rounded-lg  z-0' >
         
-          <Chart options={options} series={series} type="line" height={350} className="z-0"/>
+          <Chart options={options} series={series} type="line" height={350} className="--tw-backdrop-sepia"/>
         
         
       </div>

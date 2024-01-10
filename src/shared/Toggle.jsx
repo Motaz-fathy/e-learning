@@ -17,10 +17,10 @@ const Toggle = () => {
 
   return (
     <div>
-      <button onClick={toggleTheme} className=" ">
+      <button onClick={toggleTheme} className="p-2 bg-transparent transition ease-in-out duration-300 hover:bg-blue-500 text-blue-700 font-semibold hover:text-white  border border-blue-500 hover:border-transparent rounded-[100%] ">
         <span className=" hover:text-gray-300 ">
           {isDarkMode
-            ? <div className="w-8 h-8 rounded-[100%] bg-gray-200 flex justify-center items-center ">
+            ? <div className="">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -36,7 +36,7 @@ const Toggle = () => {
                 />
               </svg>
              </div>
-            : <div className="w-8 h-8 rounded-[100%] bg-gray-200 flex justify-center items-center ">
+            : <div className=" ">
                <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
