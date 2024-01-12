@@ -7,9 +7,7 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
-      backdropFilter: {
-        'none': 'none',
-      },
+     
     },
   },
   plugins: [

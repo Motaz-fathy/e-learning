@@ -11,8 +11,7 @@
 body {
   margin: 0;
   font-family: en , ar  ; 
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
 }
 .search{
 

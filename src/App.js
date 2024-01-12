@@ -17,7 +17,7 @@ function App() {
  const success = data?.success
  console.log("roles of routes " , success)
   return (
-    <div>
+    <div className='dark:bg-gray-800'>
       <BrowserRouter>
 
 
