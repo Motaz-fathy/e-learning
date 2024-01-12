@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Toggle from '../shared/Toggle';
 import { useTranslation } from 'react-i18next';
 import { ChangeLanguage } from '../uitilty/Lang/lang';
+import { LangButton } from '../shared/LangButton';
 export const Navbar = () => {
   const {t} = useTranslation()
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,9 +13,15 @@ export const Navbar = () => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+  let [scroll_height, setScroll_height] = useState();
+  const Scroll_Height = () => {
+    setScroll_height(window.scrollY);
+  };
+  window.addEventListener("scroll", Scroll_Height);
+  console.log("scroll_height" , scroll_height)
   const {data} = useSelector(state => state.LoginReducer)
   return (
-    <nav className="fixed z-40 w-full bg-white shadow-md backdrop:blur-md dark:bg-black dark:border-b-[1px] max-sm:dark:border-b-[1px] py-2  ">
+    <nav className= {`  ${scroll_height >= 40 && "fixed z-50  "} w-full backdrop-blur-lg  bg-white/70 dark:bg-gray-600 dark:bg-opacity-20`}  >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
@@ -87,41 +94,11 @@ export const Navbar = () => {
             <div className="ml-4 flex items-center md:ml-6 gap-2">
               {!!data ? <div className='flex justify-center items-center  gap-2 '>
                 <span className='text-sm font-bold dark:text-white'>{data?.data?.username}</span>
-                <div className="relative group">
-                  <div  onClick={() => set_profile(!profile)}
-                  className="w-8 h-8 rounded-[100%] bg-gray-200 cursor-pointer flex justify-center items-center">   
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="m10.5 21 5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 0 1 6-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 0 1-3.827-5.802" />
-                  </svg>
-                  </div>
-
-                  <div className={`${profile === false && "h-0 py-0 mt-0 w-0 opacity-0 overflow-hidden"} transition ease-in-out duration-300 absolute z-10 translate-x-[-80%] rtl:translate-x-[0%] bg-white text-gray-700 py-1 mt-2 rounded-md shadow-lg w-40`}>
-                    <div
-                      onClick={() => {
-                      ChangeLanguage("en")
-                      set_profile(false)
-                      }}
-                      className="block p-2  text-sm w-full cursor-pointer hover:bg-gray-200"
-                    >
-                      En
-                    </div>
-                    <div
-                      onClick={() => {
-                      ChangeLanguage("ar")
-                      set_profile(false)
-                      }}
-                      className="block p-2  text-sm w-full cursor-pointer hover:bg-gray-200"
-                    >
-                     عربى
-                    </div>
-             
-                  </div>
-
-                </div>
+                <LangButton />
                 <Toggle />
-                <Link to={'/login'} className="text-gray-900 dark:text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                <Link to={'/login'} className="  bg-red-500 text-white dark:text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                 {t("Log Out")}
-              </Link>
+                </Link>
               </div>  : <>
                 <Link to={'/login'} className="text-gray-900 dark:text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                 {t("Login")}
@@ -129,37 +106,7 @@ export const Navbar = () => {
               <Link to={'/register'} className="ml-4 text-gray-900 dark:text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                 {t("Sign Up")}
               </Link>
-                <div className="relative group">
-                  <div  onClick={() => set_profile(!profile)}
-                  className="w-8 h-8 rounded-[100%] bg-gray-200 cursor-pointer flex justify-center items-center hover:text-gray-400">  
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="m10.5 21 5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 0 1 6-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 0 1-3.827-5.802" />
-                    </svg>     
-                  </div>
-
-                  <div className={`${profile === false && "h-0 py-0 mt-0 w-0 opacity-0 overflow-hidden"} transition ease-in-out duration-300 absolute z-10 translate-x-[-80%] rtl:translate-x-[0%] bg-white text-gray-700 py-1 mt-2 rounded-md shadow-lg w-40`}>
-                    <div
-                      onClick={() => {
-                      ChangeLanguage("en")
-                      set_profile(false)
-                      }}
-                      className="block p-2  text-sm w-full cursor-pointer hover:bg-gray-200"
-                    >
-                      En
-                    </div>
-                    <div
-                      onClick={() => {
-                      ChangeLanguage("ar")
-                      set_profile(false)
-                      }}
-                      className="block p-2  text-sm w-full cursor-pointer hover:bg-gray-200"
-                    >
-                     عربى
-                    </div>
-             
-                  </div>
-
-                </div>
+              <LangButton />
               <Toggle />
 
               </> } 

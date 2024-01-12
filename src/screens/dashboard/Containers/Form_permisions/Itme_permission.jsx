@@ -15,7 +15,7 @@ export const Itme_permission = ({premission , handleCheckboxChange , filter_name
                 transition-all before:absolute before:top-2/4 before:left-2/4 
                 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 
                 before:rounded-full before:bg-blue-gray-400 before:opacity-0 before:transition-opacity
-                checked:border-black checked:bg-gray-600 checked:before:bg-gray-400 hover:before:opacity-10
+                checked:border-sky-900 checked:bg-sky-500 checked:before:bg-sky-400 hover:before:opacity-10
                 dark:checked:bg-gray-400 dark:checked:before:bg-white
                 "
                 id="checkbox"  onChange={() => handleCheckboxChange(admin?.id)}/>
