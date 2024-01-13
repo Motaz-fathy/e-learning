@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Info = () => {
   return (
-    <div className='w-full h-10 bg-green-400 flex justify-between items-center '>
+    <div className='w-full h-10  flex justify-between items-center '>
        <span className='text-md text-white font-bold p-4'>الدعم من قبل : 01016663555</span> 
        <div className='flex justify-center items-center gap-2 text-white p-4'>
             <svg  width="20" height="20" viewBox="0 0 24 24" className='text-white'>

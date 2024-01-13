@@ -1,12 +1,11 @@
 import React from "react";
 import { Bluring_effect } from "../../shared/Bluring_effect";
-import { Service_card } from "./Service_card";
+
 
 export const Service_header = () => {
   return (
     <div className="w-full relative isolate px-6 pt-0 lg:px-8">
-      <Bluring_effect />
-      <div className="w-full mx-auto   sm:py-48 ">
+      <div className="w-full mx-auto    ">
         <span className="dark:text-white w-full text-center flex justify-center items-center py-5 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl  mx-auto max-w-2xl">
           service
         </span>
@@ -20,7 +19,7 @@ export const Service_header = () => {
             fugiat aliqua.
           </p>
 
-         <Service_card />
+          
         </div>
       </div>
     </div>

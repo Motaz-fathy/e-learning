@@ -9,11 +9,11 @@ export const Header = () => {
    <>
    <Navbar />
     <div
-      className="w-full h-[45vw] max-sm:h-[60vw] flex justify-center items-center   bg-gradient-to-br from-gray-300 to-gray-100 dark:bg-gray-900   overflow-hidden"
+      className="w-full h-[45vw] max-sm:h-[100dvw] flex justify-center items-center   border-b-[1px] border-gray-300   overflow-hidden"
       
     >
       
-      <div className="w-1/2 h-full  flex justify-center items-center dark:bg-gray-900 ">
+      <div className="w-1/2 h-full  flex justify-center items-center  ">
         <Swiper
           className=" "
           dir={"rtl"}
