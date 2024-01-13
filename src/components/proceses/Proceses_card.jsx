@@ -3,7 +3,7 @@ import React from "react";
 export const Proceses_card = () => {
   return (
     <section className="w-full h-auto p-4 flex justify-center items-center gap-3 max-sm:flex-col ">
-      <div className="w-[20rem] max-sm:w-[25rem] m-auto h-[22rem] rounded-xl shadow-xl bg-opacity-10 flex justify-center items-center hover:border-[1px] hover:border-sky-300   bg-white transition-all ease-in-out duration-300 hover:scale-105 cursor-pointer ">
+      <div className="w-5/6 m-auto h-[22rem] rounded-xl shadow-xl bg-opacity-10 flex justify-center items-center hover:border-[1px] hover:border-sky-300   bg-white transition-all ease-in-out duration-300 hover:scale-105 cursor-pointer ">
         <div className="flex flex-col items-center w-full h-full gap-3 ">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -31,7 +31,7 @@ export const Proceses_card = () => {
         </div>
       </div>
 
-      <div className="w-[20rem] max-sm:w-[25rem] m-auto h-[22rem] rounded-xl shadow-xl bg-opacity-10 flex justify-center items-center hover:border-[1px] hover:border-sky-300   bg-white transition-all ease-in-out duration-300 hover:scale-105 cursor-pointer ">
+      <div className="w-5/6 m-auto h-[22rem] rounded-xl shadow-xl bg-opacity-10 flex justify-center items-center hover:border-[1px] hover:border-sky-300   bg-white transition-all ease-in-out duration-300 hover:scale-105 cursor-pointer ">
         <div className="flex flex-col items-center w-full h-full gap-3 ">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -58,7 +58,7 @@ export const Proceses_card = () => {
         </div>
       </div>
 
-      <div className="w-[20rem] max-sm:w-[25rem] m-auto h-[22rem] rounded-xl shadow-xl bg-opacity-10 flex justify-center items-center hover:border-[1px] hover:border-sky-300   bg-white transition-all ease-in-out duration-300 hover:scale-105 cursor-pointer ">
+      <div className="w-5/6 m-auto h-[22rem] rounded-xl shadow-xl bg-opacity-10 flex justify-center items-center hover:border-[1px] hover:border-sky-300   bg-white transition-all ease-in-out duration-300 hover:scale-105 cursor-pointer ">
         <div className="flex flex-col items-center w-full h-full gap-3 ">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -85,7 +85,7 @@ export const Proceses_card = () => {
         </div>
       </div>
 
-      <div className="w-[20rem] max-sm:w-[25rem] m-auto h-[22rem] rounded-xl shadow-xl bg-opacity-10 flex justify-center items-center hover:border-[1px] hover:border-sky-300   bg-white transition-all ease-in-out duration-300 hover:scale-105 cursor-pointer ">
+      <div className="w-5/6 m-auto h-[22rem] rounded-xl shadow-xl bg-opacity-10 flex justify-center items-center hover:border-[1px] hover:border-sky-300   bg-white transition-all ease-in-out duration-300 hover:scale-105 cursor-pointer ">
         <div className="flex flex-col items-center w-full h-full gap-3 ">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -112,6 +112,7 @@ export const Proceses_card = () => {
           </span>
         </div>
       </div>
+
     </section>
   );
 };

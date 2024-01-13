@@ -2,7 +2,7 @@ import React from "react";
 
 export const Aricals_about = () => {
   return (
-    <div className="w-1/3 h-auto  flex flex-col items-start max-sm:w-full p-6 gap-4 dark:text-white ">
+    <div className="w-1/3 h-auto  flex flex-col items-start max-sm:w-full p-6 gap-4 dark:text-white max-sm:p-0">
       <div className="text-4xl font-bold dark:text-white">فقط خدمات عالية الجودة</div>
       <p className="text-gray-800 dark:text-white">
         هدفنا الرئيسي هو توفير منصة رقمية تجمع بين المواطنين والسلطات المحلية،
