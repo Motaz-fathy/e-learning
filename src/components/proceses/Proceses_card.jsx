@@ -1,9 +1,17 @@
 import React from "react";
-
+import { useInView } from "react-intersection-observer";
 export const Proceses_card = () => {
+
+  const { ref: tht1, inView: vist1 } = useInView(); 
+  const { ref: th2, inView: vis2 } = useInView(); 
+  const { ref: th3, inView: vis3 } = useInView(); 
+  const { ref: th4, inView: vis4 } = useInView(); 
+
+
   return (
     <section className="w-full h-auto p-4 flex justify-center items-center gap-3 max-sm:flex-col ">
-      <div className="w-5/6 m-auto h-[22rem] rounded-xl shadow-xl bg-opacity-10 flex justify-center items-center hover:border-[1px] hover:border-sky-300   bg-white transition-all ease-in-out duration-300 hover:scale-105 cursor-pointer ">
+
+      <div ref={tht1} className={`${vist1 && 'animate-slid-card-1'} w-5/6 m-auto h-[23rem] py-3 overflow-hidden p-4 rounded-xl shadow-xl bg-opacity-10 flex justify-center items-center hover:border-[1px] hover:border-sky-300   bg-white transition-all ease-in-out duration-300 hover:scale-105 cursor-pointer `}>
         <div className="flex flex-col items-center w-full h-full gap-3 ">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -31,7 +39,7 @@ export const Proceses_card = () => {
         </div>
       </div>
 
-      <div className="w-5/6 m-auto h-[22rem] rounded-xl shadow-xl bg-opacity-10 flex justify-center items-center hover:border-[1px] hover:border-sky-300   bg-white transition-all ease-in-out duration-300 hover:scale-105 cursor-pointer ">
+      <div ref={th2} className={`${vis2 && 'animate-slid-card-2'} w-5/6 m-auto h-[23rem] py-3 overflow-hidden p-4 rounded-xl shadow-xl bg-opacity-10 flex justify-center items-center hover:border-[1px] hover:border-sky-300   bg-white transition-all ease-in-out duration-300 hover:scale-105 cursor-pointer `}>
         <div className="flex flex-col items-center w-full h-full gap-3 ">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -58,7 +66,7 @@ export const Proceses_card = () => {
         </div>
       </div>
 
-      <div className="w-5/6 m-auto h-[22rem] rounded-xl shadow-xl bg-opacity-10 flex justify-center items-center hover:border-[1px] hover:border-sky-300   bg-white transition-all ease-in-out duration-300 hover:scale-105 cursor-pointer ">
+      <div ref={th3} className={`${vis3 && 'animate-slid-card-3'} w-5/6 m-auto h-[23rem] py-3 overflow-hidden p-4 rounded-xl shadow-xl bg-opacity-10 flex justify-center items-center hover:border-[1px] hover:border-sky-300   bg-white transition-all ease-in-out duration-300 hover:scale-105 cursor-pointer `}>
         <div className="flex flex-col items-center w-full h-full gap-3 ">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -85,7 +93,7 @@ export const Proceses_card = () => {
         </div>
       </div>
 
-      <div className="w-5/6 m-auto h-[22rem] rounded-xl shadow-xl bg-opacity-10 flex justify-center items-center hover:border-[1px] hover:border-sky-300   bg-white transition-all ease-in-out duration-300 hover:scale-105 cursor-pointer ">
+      <div ref={th4} className={`${vis4 && 'animate-slid-card-4'} w-5/6 m-auto h-[23rem] py-3 overflow-hidden p-4 rounded-xl shadow-xl bg-opacity-10 flex justify-center items-center hover:border-[1px] hover:border-sky-300   bg-white transition-all ease-in-out duration-300 hover:scale-105 cursor-pointer `}>
         <div className="flex flex-col items-center w-full h-full gap-3 ">
           <svg
             xmlns="http://www.w3.org/2000/svg"

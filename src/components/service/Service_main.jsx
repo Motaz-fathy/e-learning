@@ -6,8 +6,9 @@ import { Service_card } from "./Service_card";
 import { Bluring_effect } from "../../shared/Bluring_effect";
 
 export const Service_main = () => {
+
   return (
-    <section className="relative w-full h-auto isolate  border-b-[1px] border-gray-300 py-32 flex items-center flex-col 
+    <section className="overflow-hidden relative w-full h-auto isolate  border-b-[1px] border-gray-300 py-32 flex items-center flex-col 
        ">
       <Bluring_effect />
       <div className="relative isolate overflow-hidden w-full flex flex-col items-center ">
@@ -15,7 +16,7 @@ export const Service_main = () => {
           <div className="px-8 m-auto"> <Service_card /></div>
          
       </div>
-      <Bluring_circl color={"white"} />
+      <Bluring_circl color={"#ed5765"} />
     </section>
   );
 };
