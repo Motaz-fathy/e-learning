@@ -1,8 +1,11 @@
 import React from 'react';
+import { useInView } from 'react-intersection-observer';
 
 export const Images = () => {
+  const { ref: th1, inView: vis1 } = useInView();
+
   return (
-    <div className='relative w-3/5 max-sm:w-full overflow-hidden'>
+    <div ref={th1} className={`relative w-3/5 max-sm:w-full overflow-hidden ${vis1 && 'animate-fide-image'}`}>
       <div className='relative w-full h-auto max-sm:w-full '>
         <div className='absolute bottom-5  right-20 shadow-lg w-80 h-24 bg-white rounded-xl flex justify-between items-center'>
           <img

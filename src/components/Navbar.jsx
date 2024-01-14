@@ -9,7 +9,6 @@ export const Navbar = () => {
   const {t} = useTranslation()
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [dropservise , set_dropservise] = useState(true)
-  const [profile , set_profile] = useState(false)
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -18,10 +17,9 @@ export const Navbar = () => {
     setScroll_height(window.scrollY);
   };
   window.addEventListener("scroll", Scroll_Height);
-  console.log("scroll_height" , scroll_height)
   const {data} = useSelector(state => state.LoginReducer)
   return (
-    <nav className= {`  ${scroll_height >= 40 && "fixed z-50  "} w-full backdrop-blur-lg  bg-white/70 dark:bg-gray-600 dark:bg-opacity-20`}  >
+    <nav className= {`z-50  ${scroll_height >= 40 && "fixed z-50  "} w-full backdrop-blur-lg  bg-white/70 dark:bg-gray-600 dark:bg-opacity-20`}  >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
