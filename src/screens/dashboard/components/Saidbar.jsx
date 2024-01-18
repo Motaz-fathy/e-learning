@@ -4,9 +4,10 @@ export const Saidbar = ({showSidebar , setShowSidebar , set_toggle_conntent}) =>
   
   return (
     <div
-    className={` shadow-md w-1/5 flex-shrink-0  border-r-[1px] rtl:border-l-[1px] border-white  bg-gradient-to-t to-sky-500 from-white dark:bg-gray-600  ${
+    className={` h-screen rounded-xl  w-1/5 flex-shrink-0 bg-opacity-0  bg-gray-300 shadow-xl 
+      ${
       showSidebar ? 'block' : 'hidden'
-    } lg:block  lg:min-h-[48vw] max-sm:z-50 max-sm:w-full max-sm:absolute max-sm:min-h-screen max-sm:bg-white/50 max-sm:backdrop-blur-sm`}
+    } lg:block  lg:min-h-[48vw] max-sm:z-50 max-sm:w-full max-sm:fixed max-sm:min-h-screen  max-sm:bg-white/50 max-sm:backdrop-blur-sm`}
   >
     {/* Sidebar content */}
     <div className="pt-4">
@@ -19,15 +20,15 @@ export const Saidbar = ({showSidebar , setShowSidebar , set_toggle_conntent}) =>
       {/* Buttons */}
       <div className="w-full  m-auto flex flex-col items-center">
         <button onClick={() => set_toggle_conntent(0)}
-        className=" w-full  py-2 bg-transparent transition ease-in-out duration-300 text-white hover:bg-white  font-semibold hover:text-sky-500  border-t border-white hover:border-transparent ">
+        className=" w-full  py-2 bg-transparent transition ease-in-out duration-300 text-gray-800 dark:text-white hover:bg-white  font-semibold hover:text-sky-500  border-t border-gray-800 dark:border-white hover:border-transparent ">
         Main
         </button>
         <button  onClick={() => set_toggle_conntent(1)}
-     className=" w-full  py-2 bg-transparent transition ease-in-out duration-300 text-white hover:bg-white  font-semibold hover:text-sky-500  border-t border-white hover:border-transparent ">
+     className=" w-full  py-2 bg-transparent transition ease-in-out duration-300 text-gray-800 dark:text-white hover:bg-white  font-semibold hover:text-sky-500  border-t border-gray-800 dark:border-white hover:border-transparent ">
      permission settings
         </button>
         <button
-     className=" w-full  py-2 bg-transparent transition ease-in-out duration-300 text-white hover:bg-white  font-semibold hover:text-sky-500  border-t border-white hover:border-transparent ">
+     className=" w-full  py-2 bg-transparent transition ease-in-out duration-300 text-gray-800 dark:text-white hover:bg-white  font-semibold hover:text-sky-500  border-t border-gray-800 dark:border-white hover:border-transparent ">
      Button 3
         </button>
       </div>

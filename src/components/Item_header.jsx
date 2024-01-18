@@ -13,7 +13,7 @@ export const Item_header = () => {
           </span>
         </div>
       </div>
-        <span className="w-full max-sm:text-xl max-sm:w-full max-sm:m-auto  text-6xl  font-sans leading-11 font-bold text-center dark:text-white">
+        <span className="w-full max-sm:text-xl max-sm:w-full max-sm:m-auto  text-6xl   leading-11 font-bold text-center dark:text-white">
           نحن نقدم أفضل خدمات . التى توفر احتياجاتك.
         </span>
         <p className="w-full text-center max-sm:text-xs dark:text-gray-200">

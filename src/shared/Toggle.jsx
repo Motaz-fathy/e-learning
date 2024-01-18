@@ -17,7 +17,7 @@ const Toggle = () => {
 
   return (
     <div>
-      <button onClick={toggleTheme} className="p-2 bg-transparent transition ease-in-out duration-300 hover:bg-blue-500 text-blue-700 font-semibold hover:text-white  border border-blue-500 hover:border-transparent rounded-[100%] ">
+      <button onClick={toggleTheme} className="p-2 bg-transparent transition ease-in-out duration-300 hover:bg-gray-500 text-black dark:text-white font-semibold hover:text-white  border border-black dark:border-white hover:border-transparent rounded-[100%] ">
         <span className=" hover:text-gray-300 ">
           {isDarkMode
             ? <div className="">

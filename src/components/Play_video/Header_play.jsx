@@ -1,11 +1,13 @@
 import React from "react";
 import { Bluring_effect } from "../../shared/Bluring_effect";
-
+import { Bluring_circl } from "../../shared/Bluring_circl";
 export const Header_play = () => {
   return (
     <div className="relative  w-full h-auto ">
 
-      <div className="w-1/2 max-sm:w-5/6 mx-auto p-4 text-center shadow-lg bg-white border border-gray-200 rounded-lg  sm:p-8 dark:bg-gray-800 dark:border-gray-700 absolute top-20 left-0 right-0 z-40">
+      <div className="absolute   w-1/2 max-sm:w-5/6 mx-auto p-4 text-center shadow-lg bg-white border border-gray-200 rounded-lg  sm:p-8 dark:bg-gray-800 dark:border-gray-700  top-20 left-0 right-0 z-40">
+         <div className="w-[100%] h-[100%] relative isolate overflow-hidden">
+         <Bluring_effect />
         <h5 className="mb-2 text-3xl font-bold text-gray-900 dark:text-white">
           نحن نحمل أكثر من مجرد مهارات تشفير جيدة
         </h5>
@@ -69,6 +71,8 @@ export const Header_play = () => {
             </div>
           </div>
         </div>
+        <Bluring_circl color={"#e803ca"} />
+         </div>
       </div>
 
       <img
@@ -76,6 +80,8 @@ export const Header_play = () => {
         alt=""
         className="w-full h-[60vh] absolute top-0 left-0 right-0 z-10 blur-md"
       />
+
+    
     </div>
   );
 };
