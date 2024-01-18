@@ -3,15 +3,13 @@ import {Popover} from '../../../../shared/Popover'
 import axios from 'axios'
 import { useSelector } from 'react-redux'
 import { Loading } from '../../../../shared/Loading'
-import { Itme_permission } from './Itme_permission'
-import {removeDuplicates} from '../../../../uitilty/Remove_duplicates'
+import { Student_permission } from './Student_permission'
 export const MainFormpermission = () => {
   const {data} = useSelector(state => state.LoginReducer) 
   const token = data?.data?.access
   const [premission , set_permission] = useState([])
   const [loading , set_loading] = useState(false)
   const [isChecked, setIsChecked] = useState([]);
-  const filter_name = ["parent" , "student" , "teacher"]
   const [ id_url , set_id ] = useState(null)
   const handleCheckboxChange = (item) => {
     setIsChecked([item?.id]);
@@ -56,14 +54,12 @@ export const MainFormpermission = () => {
     <div className='container w-full  flex flex-col items-start gap-10 '>
       {loading === true ? <Loading /> :   <>
       {/* Parent setting  */}
-       {filter_name?.map((filter) => {
-        return <>
-        <div className='w-full text-md font-bold   bg-sky-500 p-2 dark:bg-indigo-950 rounded-md dark:shadow-lg text-white'>{filter} setting </div>
-        <div className='w-full flex justify-center items-center m-auto  max-sm:h-[60vh]  p-2 '>
-        <Itme_permission  premission={premission} handleCheckboxChange={handleCheckboxChange} filter_name={filter}/>
+     
+        <div className='w-full text-md font-bold   bg-sky-500 p-2 dark:bg-indigo-950 rounded-md dark:shadow-lg text-white'> setting </div>
+        <div className='w-full flex flex-col items-start m-auto  max-sm:h-[60vh]  p-2 '>
+        <Student_permission  premission={premission} handleCheckboxChange={handleCheckboxChange} />
         </div>   
-        </>
-       })}
+       
 
 
      {/* buttons  */}
