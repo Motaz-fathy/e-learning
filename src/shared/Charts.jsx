@@ -45,7 +45,7 @@ export const Percentage = () => {
   }, []);
 
   return (
-    <div className=' w-1/2 bg-opacity-20 shadow-lg  p-4 flex flex-col items-center gap-2'>
+    <div className=' w-1/2  shadow-lg  p-4 flex flex-col items-center gap-2   rounded-xl bg-opacity-10 bg-gray-300'>
       <div id="chart">
         <ReactApexChart
           options={chartOptions}
@@ -84,14 +84,17 @@ export const ExpenseRatioChart = () => {
           legend: {
             position: 'bottom',
           },
+          
         },
       },
     ],
+
+   
   };
 
   return (
-    <div className="w-1/2 h-[100%] max-sm:w-full bg-opacity-20 border-[1px] border-sky-400 rounded-lg  z-0">
-      <Chart options={options} series={options.series} type="donut" height={300} className="--tw-backdrop-sepia"/>
+    <div className="w-1/2 h-[100%] max-sm:w-full shadow-xl  p-4     rounded-xl bg-opacity-10 bg-gray-300">
+      <Chart options={options} series={options.series} type="donut" height={300} className="--tw-backdrop-sepia "/>
     </div>
   );
 };
@@ -197,9 +200,9 @@ export const LineChart = () => {
     ];
   
     return (
-      <div className='w-1/2 h-[100%] max-sm:w-full bg-opacity-20 border-[1px] border-sky-400 rounded-lg  z-0' >
+      <div className='w-1/2 h-[100%] max-sm:w-full shadow-xl      rounded-xl bg-opacity-10 bg-gray-300 ' >
         
-          <Chart options={options} series={series} type="line" height={350} className="--tw-backdrop-sepia"/>
+          <Chart options={options} series={series} type="line" height={350} className=" dark:text-white"/>
         
         
       </div>

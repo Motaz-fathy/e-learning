@@ -18,7 +18,9 @@ export const Itme_permission = ({premission , handleCheckboxChange , filter_name
                 checked:border-sky-900 checked:bg-sky-500 checked:before:bg-sky-400 hover:before:opacity-10
                 dark:checked:bg-gray-400 dark:checked:before:bg-white
                 "
-                id="checkbox"  onChange={() => handleCheckboxChange(admin?.id)}/>
+                id="checkbox"  onChange={() => {
+                   handleCheckboxChange(admin)
+                  }}/>
             <span
                 className="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor"

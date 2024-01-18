@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Navbar } from "./components/Navbar";
 import { Saidbar } from "./components/Saidbar";
 import { Container } from "./components/Container";
+import { Bluring_effect } from "../../shared/Bluring_effect";
 export const Main = () => {
   const [showSidebar, setShowSidebar] = useState(false);
   const [profile, set_profile] = useState(false);
@@ -12,7 +13,8 @@ export const Main = () => {
   };
 
   return (
-    <div className="relative flex min-h-screen max-sm:z-[9999999] w-full rtl:overflow-y-hidden  dark:bg-gray-600">
+    <div className="relative isolate flex min-h-screen  w-full rtl:overflow-y-hidden  dark:bg-gray-800">
+      <Bluring_effect />
       {/* Sidebar */}
       <Saidbar
         showSidebar={showSidebar}
@@ -21,7 +23,7 @@ export const Main = () => {
       />
 
       {/* Main Content */}
-      <main className="relative flex flex-col flex-grow w-4/6 dark:bg-gray-600">
+      <main className="relative flex flex-col flex-grow w-4/6 ">
         {/* Navbar */}
         <Navbar
           toggleSidebar={toggleSidebar}

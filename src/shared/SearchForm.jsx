@@ -29,7 +29,7 @@ export const SearchForm = () => {
           handleToggle();
           setShowPopover(!showPopover) // Call the toggle function from the parent component
         }}
-        className="p-2 bg-transparent transition ease-in-out duration-300 hover:bg-blue-500 text-blue-700 font-semibold hover:text-white  border border-blue-500 hover:border-transparent rounded-[100%]"
+        className="p-2 bg-transparent transition ease-in-out duration-300 hover:bg-gray-500 text-black dark:text-white font-semibold hover:text-white  border border-black dark:border-white hover:border-transparent rounded-[100%]"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
