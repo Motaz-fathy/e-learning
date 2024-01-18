@@ -7,7 +7,7 @@ import { Bluring_effect } from "../../shared/Bluring_effect";
 export const Main = () => {
   const [showSidebar, setShowSidebar] = useState(false);
   const [profile, set_profile] = useState(false);
-  const [toggle_content, set_toggle_conntent] = useState(0);
+  const [toggle_content, set_toggle_content] = useState(0);
   const toggleSidebar = () => {
     setShowSidebar(!showSidebar);
   };
@@ -19,7 +19,7 @@ export const Main = () => {
       <Saidbar
         showSidebar={showSidebar}
         setShowSidebar={setShowSidebar}
-        set_toggle_conntent={set_toggle_conntent}
+        set_toggle_content={set_toggle_content}
       />
 
       {/* Main Content */}
