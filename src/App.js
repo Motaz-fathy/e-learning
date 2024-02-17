@@ -17,7 +17,7 @@ function App() {
  const success = data?.success
  
   return (
-    <div className='dark:bg-gray-800 rtl:font-sans' >
+    <div className='dark:bg-gray-800 rtl:font-sans overflow-hidden' >
       <BrowserRouter>
 
           <Routes>

@@ -19,15 +19,15 @@ export const Navbar = () => {
   window.addEventListener("scroll", Scroll_Height);
   const {data} = useSelector(state => state.LoginReducer)
   return (
-    <nav className= {` z-50 rtl:font-sans rtl:font-bold ${scroll_height >= 40 && "fixed z-50  "} w-full backdrop-blur-lg  bg-white/70 dark:bg-gray-600 dark:bg-opacity-20`}  >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className= {`  rtl:font-sans z-50  rtl:font-bold ${scroll_height >= 40 && "fixed  z-50 "} w-full backdrop-blur-lg  bg-white/70 dark:bg-gray-600 dark:bg-opacity-20`}  >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <div className="flex-shrink-0 dark:text-white">
               {/* <img className="h-8 w-8" src="/path/to/logo.png" alt="Logo" /> */} Logo
             </div>
             <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-4">
+              <div className=" flex items-baseline space-x-4">
                 <Link
                   to="/"
                   className="text-gray-900 dark:text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
@@ -125,8 +125,8 @@ export const Navbar = () => {
         </div>
       </div>
       {isMenuOpen && (
-        <div className="md:hidden dark:text-white">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <div className="md:hidden dark:text-white ">
+          <div className="px-2 pt-2 pb-3 ">
             <Link
               to="/"
               className="text-gray-900 hover:bg-gray-700 dark:text-white block px-3 py-2 rounded-md text-base font-medium"
@@ -139,7 +139,7 @@ export const Navbar = () => {
             >
               {t("About Us")}
             </Link>
-            <div className="relative group">
+            <div className="relative ">
               <div onClick={() => set_dropservise(!dropservise)} className="text-gray-900 cursor-pointer hover:bg-gray-700 dark:text-white block px-3 py-2 rounded-md text-base font-medium">
                 {t("Services")}
               </div>

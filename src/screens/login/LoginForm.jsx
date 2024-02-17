@@ -6,7 +6,7 @@ import {LoginAction} from '../../store/Actions/AuthActions'
 import { useDispatch, useSelector } from "react-redux";
 export const LoginForm = () => {
   const dispatch = useDispatch() 
-  const {data , error } = useSelector(state => state.LoginReducer)
+  const {data , error , loading} = useSelector(state => state.LoginReducer)
 
   const success = data?.success
 
@@ -35,9 +35,9 @@ export const LoginForm = () => {
   };
 
   return (
-    <div className="w-1/2 max-w-md bg-white p-8 shadow max-sm:w-full flex flex-col items-center ">
-      <span className=" text-2xl font-bold mb-4 ">Login</span>
-      {!!error && <span className="text-md font-bold mb-4 text-red-500"> user not found </span>}
+    <div className="w-1/2 max-w-md    max-sm:w-full flex flex-col items-center m-auto">
+      <span className=" text-2xl font-bold mb-4 ">Sign in to your account</span>
+      
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -91,11 +91,9 @@ export const LoginForm = () => {
           <button
           onClick={handleSubmit}
             type="submit"
-            className=" h-10 hover:bg-sky-700 text-white font-bold  rounded 
-          w-full flex justify-center items-center bg-sky-300 my-3
-          focus:outline-none focus:ring focus:border-blue-500"
-          >
-            Login
+            className="flex w-full justify-center rounded-md my-2 bg-sky-300   hover:bg-sky-200 px-3 py-1.5 text-sm font-semibold leading-6 dark:text-white  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            >
+            Login {!!loading && "..."}
           </button>
         </Form>
       </Formik>
@@ -108,6 +106,21 @@ export const LoginForm = () => {
           </Link>
         </p>
       </div>
+
+      <div className="w-full mt-4 flex justify-center items-center gap-2">
+      <button className="bg-gray-100 shadow-md bg-opacity-5 hover:bg-gray-200 text-black text-xs py-2    rounded w-1/3 flex justify-center items-center gap-2">
+        <span>Google</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail" data-locator-target="vscode"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      </button>
+      <hr className="  bg-black w-5 " />
+      <span>or</span>
+      <hr className="  bg-black w-5 " />
+      <button className="bg-gray-100 shadow-md bg-opacity-5 hover:bg-gray-200 text-black text-xs py-2    rounded w-1/3 flex justify-center items-center gap-2">
+        <span>Facebook</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook" data-locator-target="vscode"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> 
+
+      </button>
+    </div>
 
     </div>
   );
