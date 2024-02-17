@@ -13,7 +13,7 @@ export const Main = () => {
   };
 
   return (
-    <div className="relative isolate flex min-h-screen  w-full rtl:overflow-y-hidden  dark:bg-gray-800">
+    <div className="relative isolate dark:text-white flex min-h-screen  w-full rtl:overflow-y-hidden  dark:bg-gray-800">
       <Bluring_effect />
       {/* Sidebar */}
       <Saidbar

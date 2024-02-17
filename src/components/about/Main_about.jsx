@@ -6,7 +6,7 @@ import { Bluring_effect } from "../../shared/Bluring_effect";
 export const Main_about = () => {
   return (
     <section  className={`
-     relative isolate w-full px-32 max-sm:px-4 max-sm:py-16 m-auto overflow-hidden
+     relative isolate w-full px-4 py-24 max-sm:px-4 max-sm:py-16 m-auto overflow-hidden
      h-screen max-sm:h-auto border-b-[1px] gap-4 border-gray-300 flex justify-between items-center max-sm:flex-col
     
      `}  >

@@ -11,7 +11,7 @@ export const Header = () => {
    <>
    <Navbar />
     <div
-      className="w-full h-[45vw] relative isolate max-sm:h-[100dvw] flex justify-center items-center   border-b-[1px] border-gray-300   ">
+      className="w-full h-[50vw] overflow-hidden relative isolate max-sm:h-[100dvw] flex justify-center items-center   border-b-[1px] border-gray-300   ">
        <Bluring_effect />
       <div className="w-1/2 h-full  flex justify-center items-center  ">
         <Swiper

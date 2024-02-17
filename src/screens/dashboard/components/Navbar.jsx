@@ -7,7 +7,7 @@ export const Navbar = ({profile , set_profile , toggleSidebar}) => {
 
  
   return (
-    <nav className="dark:text-white w-2/3 max-sm:w-5/6  m-auto p-4 rounded-full  shadow-xl   bg-opacity-10 bg-gray-300  flex items-center justify-between    backdrop-blur-sm  mt-5">
+    <nav className=" w-full max-sm:w-5/6  m-auto p-4 rounded-full     bg-opacity-10   flex items-center justify-between    backdrop-blur-sm  mt-5">
       <div className="flex items-center ">
         {/* Menu Icon */}
         <button
@@ -29,7 +29,7 @@ export const Navbar = ({profile , set_profile , toggleSidebar}) => {
         </button>
         {/* Logo */}
         {/* <img src="/path/to/logo.png" alt="Logo" className="w-8 h-8" /> */}
-        <span>Logo</span>
+        <span></span>
       </div>
       <div className="flex items-center gap-3 ">
         {/* Buttons */}
